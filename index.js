@@ -1,6 +1,6 @@
 // Game Constants & Variables
 let inputDir = {x: 0, y: 0}; 
-let speed = 5;
+let speed = 2;
 let lastPaintTime = 0;
 const minRange = 1;
 const maxRange = 18;
@@ -30,8 +30,21 @@ function isCollide(snake) {
         }
     }
     // If you bump into the wall
-    if(snake[0].x >= 20 || snake[0].x <=0 || snake[0].y >= 20 || snake[0].y <=0){
-        return true;
+    // if(snake[0].x >= 20 || snake[0].x <=0 || snake[0].y >= 20 || snake[0].y <=0){
+    //     return true;
+    // }
+
+    if(snake[0].x >= 20){
+        snakeArr[0].x = 1;
+    }
+    if(snake[0].x <= 0){
+        snakeArr[0].x = 20;
+    }
+    if(snake[0].y >= 20){
+        snakeArr[0].y = 1;
+    }
+    if(snake[0].y <= 0){
+        snakeArr[0].y = 20;
     }
         
     return false;
