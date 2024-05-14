@@ -3,7 +3,7 @@ let inputDir = {x: 0, y: 0};
 let speed = 2;
 let lastPaintTime = 0;
 const minRange = 1;
-const maxRange = 18;
+const maxRange = 20;
 let snakeArr = [
     {x: getRandomNumber(minRange, maxRange), y: getRandomNumber(minRange, maxRange)}
 ];
@@ -63,7 +63,7 @@ function gameEngine(){
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y});
         let a = 2;
         let b = 16;
-        food = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())}
+        food = {x: getRandomNumber(minRange, maxRange), y: getRandomNumber(minRange, maxRange)}
     }
 
     // Moving the snake
